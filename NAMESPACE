@@ -1,2 +1,2 @@
 import(ggplot2, lme4, multcomp, MuMIn, nlme, pbkrtest)
-export(PlotCI, satterthwaite, SimLongi, SimLongiMMM, SimLongiMMM2)
+export(PlotCI, satterthwaite, SimLongi, SimLongiMMM)
