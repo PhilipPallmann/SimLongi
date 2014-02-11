@@ -1,0 +1,13 @@
+Package: SimLongi
+Type: Package
+Title: Simultaneous Inference in Longitudinal Data Settings
+Version: 1.0
+Date: 2014-01-23
+Author: Philip Pallmann
+Maintainer: Philip Pallmann <pallmann@biostat.uni-hannover.de>
+Description: Simultaneous p-values and confidence intervals for comparing multiple groups per time point and/or multiple time points per group.
+License: GPL (>= 2)
+URL: https://github.com/PhilipPallmann/SimLongi
+Suggests: knitr
+VignetteBuilder: knitr
+Imports: ggplot2, lme4, multcomp, MuMIn, nlme, pbkrtest
