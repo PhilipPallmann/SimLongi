@@ -10,7 +10,7 @@ Simultaneous inference for a set of contrasts (linear combinations) of means in 
 \usage{
 SimLongiMMM(data, response, group, time, id, covariates=NULL,
             contrasts=NULL, type="Dunnett", base=1,
-            alternative="two.sided", level=0.95, df)
+            alternative="two.sided", level=0.95, refdist="normal")
 }
 \arguments{
   \item{data}{A data frame.}
@@ -24,7 +24,8 @@ SimLongiMMM(data, response, group, time, id, covariates=NULL,
   \item{base}{An integer specifying the reference group with many-to-one comparisons; ignored unless \code{contrasts=NULL} and \code{type="Dunnett"}.}
   \item{alternative}{ccc}
   \item{level}{A numeric value giving the simultaneous confidence level (1 - alpha).}
-  \item{df}{XXXXXXXXXXXXXXXX.}
+  %\item{df}{XXXXXXXXXXXXXXXX.}
+  \item{refdist}{.}
 }
 \details{
 %%  If necessary, more details than the description above
@@ -68,18 +69,12 @@ SimLongi(data=heart, response="heartrate", group="drug",
          time="time", id="person", direction="gpt",
          type="Dunnett", base=3, df="normal")$Results
 
-# Many-to-one comparisons of groups per time point
-# taking the first group ("ax23") as reference
+# With multivariate t as reference distribution:
 
 SimLongiMMM(data=heart, response="heartrate", group="drug",
-            time="time", id="person", type="Dunnett")$Results
+            time="time", id="person", type="Dunnett",
+            base=3, refdist="t")$Results
 
-# For comparison:
-
-SimLongi(data=heart, response="heartrate", group="drug",
-         time="time", id="person", direction="gpt",
-         type="Dunnett", df="normal")$Results
-          
-### WARUM SIND DIE SE'S JETZT IMMER GLEICH FUER GLEICHE ZEITPUNKTE???
+% WARUM SIND DIE SE'S JETZT IMMER GLEICH FUER GLEICHE ZEITPUNKTE???
 }
 \keyword{htest}

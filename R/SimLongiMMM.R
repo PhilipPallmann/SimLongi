@@ -1,8 +1,8 @@
 SimLongiMMM <- function(data, response, group, time, id, covariates=NULL,
-                        contrasts=NULL, type="Dunnett", base=1,
-                        alternative="two.sided", level=0.95, df="essdf"){
+                         contrasts=NULL, type="Dunnett", base=1,
+                         alternative="two.sided", level=0.95, refdist="normal"){
   
-  df <- match.arg(df, c("ess", "essdf", "adj", "pb", "satt", "kr", "con", "naive", "res", "normal"))
+  refdist <- match.arg(refdist, c("normal", "t"))
   
   if(is.null(contrasts)==T){
     
@@ -66,58 +66,16 @@ SimLongiMMM <- function(data, response, group, time, id, covariates=NULL,
   
   ########## Degrees of Freedom ##########
   
-  if(df=="ess"){
-    essmod <- gls(response ~ gt - 1, dat, correlation=corAR1(form=~1|id))
-    phi <- cov2cor(vcov(essmod))[1, 2]
-    def <- floor(ids * ((times - (times - 2) * phi) / (1 + phi))) # - times * groups)
-  }
-  
-  if(df=="essdf"){
-    essmod <- gls(response ~ gt - 1, dat, correlation=corAR1(form=~1|id))
-    phi <- cov2cor(vcov(essmod))[1, 2]
-    def <- floor(ids * ((times - (times - 2) * phi) / (1 + phi)) - times * groups)
-  }
-  
-  if(df=="adj"){
-    def <- floor(ids + (times^2 * groups^2) / ids - tgs)
-  }
-  
-  if(df=="pb"){
-    def <- dim(dat)[1] - ids - tgs + 1
-  }
-  
-  if(df=="satt"){
-    vvv <- as.vector(tapply(dat[, "response"], dat[, "tg"], var))
-    def <- floor(satterthwaite(vvv, ntg))
-  }
-  
-  if(df=="kr"){
-    keromod <- lmer(response ~ tg + (1|id), dat)
-    keromod0 <- lmer(response ~ 1 + (1|id), dat)
-    def <- floor(KRmodcomp(keromod, keromod0)$stats$ddf)
-  }
-  
-  if(df=="con"){
-    conmod <- lmer(response ~ tg - 1 + (1|id), dat)
-    def <- dim(dat)[1] - rankMatrix(cbind(getME(conmod, "X"), as.matrix(getME(conmod, "Z"))))[1]
-  }
-  
-  if(df=="naive"){
-    def <- ids - (groups * times)
-  }
-  
-  if(df=="res"){
-    def <- dim(dat)[1] - (groups * times)
-  }
-  
-  if(df=="normal"){
+  if(refdist=="normal"){
     def <- 0
   }
   
-  if(df!="normal"){
-    def <- max(def, 2)
+  if(refdist=="t"){
+    def <- max(modlist[[1]]$df, 2)
   }
   
+  ################################# wie kombinieren bei verschiedenen Fallzahlen???
+    
   ########## Tests and SCIs ##########
   
   # geht leider nicht:
@@ -183,7 +141,7 @@ SimLongiMMM <- function(data, response, group, time, id, covariates=NULL,
   out[["CritValue"]] <- crit
   out[["Alternative"]] <- alternative
   out[["ConfLevel"]] <- level
-  out[["DFMethod"]] <- df
+  out[["RefDist"]] <- refdist
   out[["DF"]] <- def
   out[["Corr"]] <- corm
   out[["ContMat"]] <- cmat
