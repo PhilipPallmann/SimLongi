@@ -6,6 +6,12 @@ Please report weird or unexpected behavior to Philip Pallmann <pallmann@biostat.
 
 #########################
 
+Version 1.1 (31 March 2014)
+
+- New functions for convenient selection among various mixed-effects models and subsequent multiple inference.
+
+#########################
+
 Version 1.0 (23 January 2014)
 
-- xxx
+- Some basic functionality.
