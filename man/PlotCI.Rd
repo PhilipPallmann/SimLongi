@@ -41,7 +41,7 @@ PlotCI(mycomp)
 
 mycompMMM <- SimLongiMMM(data=heart, response="heartrate", group="drug",
                          time="time", id="person", type="Dunnett", base=3,
-                         df="adj")
+                         refdist="t")
                    
 PlotCI(list(SL=mycomp, SL_MMM=mycompMMM))
 }

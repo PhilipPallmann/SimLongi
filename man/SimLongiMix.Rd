@@ -95,8 +95,8 @@ data(heart)
 # taking the third group ("control") as reference
 
 Mix <- SimLongiMix(data=heart, response="heartrate", group="drug",
-                   time="time", id="person", direction="gpt",
-                   type="Dunnett", base=3)
+                   time="time", id="person", rand=list("1|id", "time|id"), 
+                   direction="gpt", type="Dunnett", base=3)
 
 Mix$Results
 

@@ -9,6 +9,10 @@
 \usepackage[margin=1in]{geometry}
 \usepackage[labelfont={bf}, margin=0.5cm]{caption}
 
+%\VignetteIndexEntry{Examples using SimLongi}
+%\VignetteDepends{SimLongi}
+%\VignetteKeywords{linear mixed-effects model, multiple contrast test, simultaneous confidence interval}
+
 \title{Simultaneous inference in longitudinal settings: Examples using package \texttt{SimLongi}}
 \date{\today}
 \author{Philip Pallmann}

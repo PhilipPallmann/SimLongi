@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2014.2.18)  1 APR 2014 11:38
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2014.2.18)  1 APR 2014 11:59
 entering extended mode
 **SimLongiVign.tex
 
@@ -315,20 +315,20 @@ tim
 )
 (C:\Users\Pallmann\Desktop\NeuesProjekt\PhD\TechnicalReport\SimLongi\vignettes\
 SimLongiVign.aux)
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 66.
-LaTeX Font Info:    ... okay on input line 66.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 66.
-LaTeX Font Info:    ... okay on input line 66.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 66.
-LaTeX Font Info:    ... okay on input line 66.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 66.
-LaTeX Font Info:    ... okay on input line 66.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 66.
-LaTeX Font Info:    ... okay on input line 66.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 66.
-LaTeX Font Info:    ... okay on input line 66.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 66.
-LaTeX Font Info:    ... okay on input line 66.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 70.
+LaTeX Font Info:    ... okay on input line 70.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 70.
+LaTeX Font Info:    ... okay on input line 70.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 70.
+LaTeX Font Info:    ... okay on input line 70.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 70.
+LaTeX Font Info:    ... okay on input line 70.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 70.
+LaTeX Font Info:    ... okay on input line 70.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 70.
+LaTeX Font Info:    ... okay on input line 70.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 70.
+LaTeX Font Info:    ... okay on input line 70.
 
 (C:\Users\Pallmann\AppData\Roaming\MiKTeX\2.9\tex\context\base\supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
@@ -345,7 +345,7 @@ LaTeX Font Info:    ... okay on input line 66.
 \everyMPtoPDFconversion=\toks22
 )
 \AtBeginShipoutBox=\box29
-Package hyperref Info: Link coloring OFF on input line 66.
+Package hyperref Info: Link coloring OFF on input line 70.
  ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\hyperref\nameref.sty"
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
 
@@ -354,9 +354,9 @@ Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
 \c@section@level=\count121
 )
-LaTeX Info: Redefining \ref on input line 66.
-LaTeX Info: Redefining \pageref on input line 66.
-LaTeX Info: Redefining \nameref on input line 66.
+LaTeX Info: Redefining \ref on input line 70.
+LaTeX Info: Redefining \pageref on input line 70.
+LaTeX Info: Redefining \nameref on input line 70.
 
 (C:\Users\Pallmann\Desktop\NeuesProjekt\PhD\TechnicalReport\SimLongi\vignettes\
 SimLongiVign.out)
@@ -400,11 +400,11 @@ SimLongiVign.out)
 
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
-LaTeX Font Info:    Try loading font information for U+msa on input line 69.
+LaTeX Font Info:    Try loading font information for U+msa on input line 73.
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\umsa.fd"
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 69.
+LaTeX Font Info:    Try loading font information for U+msb on input line 73.
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\umsb.fd"
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
@@ -417,16 +417,16 @@ SimLongiVign.toc)
 {C:/Users/Pallmann/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}] [2
 
 ]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 101.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 101.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 105.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 105.
 
 (C:\Users\Pallmann\Desktop\NeuesProjekt\PhD\TechnicalReport\SimLongi\vignettes\
 SimLongiVign.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 101.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 101.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 105.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 105.
 Package rerunfilecheck Info: File `SimLongiVign.out' has not changed.
 (rerunfilecheck)             Checksum: 459B9794596456066B74A7C850D63D38;87.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 101.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 105.
  ) 
 Here is how much of TeX's memory you used:
  7722 strings out of 493921
