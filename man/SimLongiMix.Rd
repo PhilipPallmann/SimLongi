@@ -1,5 +1,5 @@
-\name{SimLongi}
-\alias{SimLongi}
+\name{SimLongiMix}
+\alias{SimLongiMix}
 \title{
 Simultaneous Inference for Longitudinal Data Using Linear Mixed-Effects Modeling
 }
