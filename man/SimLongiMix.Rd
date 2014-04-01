@@ -7,10 +7,10 @@ Simultaneous Inference for Longitudinal Data Using Linear Mixed-Effects Modeling
 Simultaneous inference for a set of contrasts (linear combinations) of means in longitudinal scenarios. Computes multiplicity-adjusted p-values and simultaneous confidence intervals for comparing groups at multiple time points, or comparing time points in multiple groups, or both.
 }
 \usage{
-SimLongi(data, response, group, time, id, covariates=NULL,
-         rand=list("1|id", "time|id", "group|id", "timegroup|id"),
-         contrasts=NULL, type="Dunnett", base=1, direction="gpt",
-         alternative="two.sided", level=0.95, df="kr")
+SimLongiMix(data, response, group, time, id, covariates=NULL,
+            rand=list("1|id", "time|id", "group|id", "timegroup|id"),
+            contrasts=NULL, type="Dunnett", base=1, direction="gpt",
+            alternative="two.sided", level=0.95, df="kr")
 }
 \arguments{
   \item{data}{A data frame.}
