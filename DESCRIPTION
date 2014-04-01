@@ -9,4 +9,5 @@ Description: Simultaneous p-values and confidence intervals for comparing multip
 License: GPL (>= 2)
 URL: https://github.com/PhilipPallmann/SimLongi
 VignetteBuilder: knitr
-Imports: ggplot2, lme4, multcomp, MuMIn, nlme, pbkrtest
+Imports: ggplot2, multcomp, MuMIn, pbkrtest
+Depends: lme4, nlme
