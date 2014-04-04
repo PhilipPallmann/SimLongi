@@ -15,15 +15,12 @@ Version: \tab 1.1-2\cr
 Date: \tab 2014-04-04\cr
 License: \tab GPL (>= 2)\cr
 }
-
-parameter and covariance estimates from a general linear model (with \code{SimLongi}), or a linear mixed-effects model (with \code{SimLongiMix}), or from combining multiple marginal models using the method of Pipper et al. (2012) (with \code{SimLongiMMM}). A convenient plotting function for simultaneous confidence intervals is also available (\code{PlotCI}), as are several example datasets (\code{brady}, \code{heart1}, \code{vitaminE}).
+Multiple contrast tests using parameter and covariance estimates from a general linear model (with \code{SimLongi}), or a linear mixed-effects model (with \code{SimLongiMix}), or from combining multiple marginal models using the method of Pipper et al. (2012) (with \code{SimLongiMMM}). A convenient plotting function for simultaneous confidence intervals is also available (\code{PlotCI}), as are several example datasets (\code{brady}, \code{heart1}, \code{vitaminE}).
 }
 \author{
 Philip Pallmann <pallmann@biostat.uni-hannover.de>
 }
 \references{
-Hothorn, T., Bretz, F., Westfall, P. (2008) Simultaneous inference in general parametric models. Biometrical Journal, 50(3), 346--363.
-
 Pipper, C. B., Ritz, C., Bisgaard, H. (2012) A versatile method for confirmatory evaluation of the effects of a covariate in multiple models. Journal of the Royal Statistical Society, Series C: Applied Statistics, 61(2), 315--326.
 }
 \keyword{
@@ -34,5 +31,6 @@ package
 }
 \examples{
 ## SimLongi()
+## SimLongiMix()
 ## SimLongiMMM()
 }
