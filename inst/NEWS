@@ -6,9 +6,15 @@ Please report weird or unexpected behavior to Philip Pallmann <pallmann@biostat.
 
 #########################
 
+Version 1.1-2 (4 April 2014)
+
+- Help pages revised and updated.
+
+#########################
+
 Version 1.1-1 (1 April 2014)
 
-- Added a (a skeleton of) pdf vignette.
+- Added (a skeleton of) a pdf vignette.
 
 #########################
 

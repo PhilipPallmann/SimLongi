@@ -2,32 +2,35 @@
 \alias{SimLongi-package}
 \docType{package}
 \title{
-A package for XXX
+A package for simultaneous inference in longitudinal data settings
 }
 \description{
-More about what it does (maybe more than one line)
+Simultaneous p-values and confidence intervals for comparing several groups per time point and/or several time points per group using multiple contrasts.
 }
 \details{
 \tabular{ll}{
 Package: \tab SimLongi\cr
 Type: \tab Package\cr
-Version: \tab 1.0\cr
-Date: \tab 2013-12-02\cr
-License: \tab What license is it under?\cr
+Version: \tab 1.1-2\cr
+Date: \tab 2014-04-04\cr
+License: \tab GPL (>= 2)\cr
 }
-% An overview of how to use the package, including the most important functions
+
+parameter and covariance estimates from a general linear model (with \code{SimLongi}), or a linear mixed-effects model (with \code{SimLongiMix}), or from combining multiple marginal models using the method of Pipper et al. (2012) (with \code{SimLongiMMM}). A convenient plotting function for simultaneous confidence intervals is also available (\code{PlotCI}), as are several example datasets (\code{brady}, \code{heart1}, \code{vitaminE}).
 }
 \author{
 Philip Pallmann <pallmann@biostat.uni-hannover.de>
 }
 \references{
-% Literature or other references for background information
+Hothorn, T., Bretz, F., Westfall, P. (2008) Simultaneous inference in general parametric models. Biometrical Journal, 50(3), 346--363.
+
+Pipper, C. B., Ritz, C., Bisgaard, H. (2012) A versatile method for confirmatory evaluation of the effects of a covariate in multiple models. Journal of the Royal Statistical Society, Series C: Applied Statistics, 61(2), 315--326.
 }
-% Optionally other standard keywords, one per line, from file KEYWORDS in the R documentation directory
-\keyword{ package }
+\keyword{
+package
+}
 \seealso{
-% Optional links to other man pages, e.g. 
-% \code{\link[<pkg>:<pkg>-package]{<pkg>}}
+\code{\link{SimLongi}}, \code{\link{SimLongiMix}}, \code{\link{SimLongiMMM}}
 }
 \examples{
 ## SimLongi()

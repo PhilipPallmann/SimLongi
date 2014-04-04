@@ -26,7 +26,7 @@ SimLongiMMM(data, response, group, time, id, covariates=NULL,
   \item{refdist}{.}
 }
 \details{
-%%  If necessary, more details than the description above
+xxx
 }
 \value{
 A list of class \code{silo} with elements

@@ -64,7 +64,7 @@ Verbeke, G. & Molenberghs, G. (2000) Linear Mixed Models for Longitudinal Data. 
 Philip Pallmann \email{pallmann@biostat.uni-hannover.de}
 }
 \seealso{
-\code{\link{SimLongiMix}}, \code{\link{SimLongiMMM}}
+\code{\link{SimLongi}}, \code{\link{SimLongiMMM}}
 }
 \examples{
 data(heart)
