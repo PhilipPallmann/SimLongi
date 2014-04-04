@@ -88,10 +88,17 @@ The
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section{Bla}
-\label{Bl}
+\section{Comparisons among treatment groups per time point}
+\label{GPT}
 
-xxx
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlkwd{library}\hlstd{(SimLongi)}
+\end{alltt}
+\end{kframe}
+\end{knitrout}
+
 
 \clearpage
 
@@ -99,7 +106,51 @@ xxx
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%\bibliographystyle{abbrvnat}
-%\bibliography{vign}
+\section{Comparisons among time points per treatment group}
+\label{TPG}
+
+\clearpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Comparing }
+\label{Comp}
+
+xxx
+
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlkwd{data}\hlstd{(brady)}
+\hlcom{# Fixed-effects model}
+\hlstd{Fix} \hlkwb{<-} \hlkwd{SimLongi}\hlstd{(}\hlkwc{data} \hlstd{= brady,} \hlkwc{response} \hlstd{=} \hlstr{"logConc"}\hlstd{,} \hlkwc{group} \hlstd{=} \hlstr{"Drug"}\hlstd{,} \hlkwc{time} \hlstd{=} \hlstr{"Time"}\hlstd{,}
+    \hlkwc{id} \hlstd{=} \hlstr{"ID"}\hlstd{,} \hlkwc{var} \hlstd{=} \hlkwd{list}\hlstd{(}\hlstr{"hett"}\hlstd{,} \hlstr{"het"}\hlstd{),} \hlkwc{cor} \hlstd{=} \hlkwd{list}\hlstd{(}\hlstr{"AR1"}\hlstd{,} \hlstr{"UN"}\hlstd{),} \hlkwc{direction} \hlstd{=} \hlstr{"gpt"}\hlstd{,}
+    \hlkwc{type} \hlstd{=} \hlstr{"Dunnett"}\hlstd{,} \hlkwc{base} \hlstd{=} \hlnum{3}\hlstd{,} \hlkwc{df} \hlstd{=} \hlstr{"adj"}\hlstd{)}
+\hlcom{# Mixed-effects model}
+\hlstd{Mix} \hlkwb{<-} \hlkwd{SimLongiMix}\hlstd{(}\hlkwc{data} \hlstd{= brady,} \hlkwc{response} \hlstd{=} \hlstr{"logConc"}\hlstd{,} \hlkwc{group} \hlstd{=} \hlstr{"Drug"}\hlstd{,} \hlkwc{time} \hlstd{=} \hlstr{"Time"}\hlstd{,}
+    \hlkwc{id} \hlstd{=} \hlstr{"ID"}\hlstd{,} \hlkwc{rand} \hlstd{=} \hlkwd{list}\hlstd{(}\hlstr{"time|id"}\hlstd{),} \hlkwc{direction} \hlstd{=} \hlstr{"gpt"}\hlstd{,} \hlkwc{type} \hlstd{=} \hlstr{"Dunnett"}\hlstd{,}
+    \hlkwc{base} \hlstd{=} \hlnum{3}\hlstd{,} \hlkwc{df} \hlstd{=} \hlstr{"kr"}\hlstd{)}
+\hlcom{# Multiple marginal models}
+\hlstd{MMM} \hlkwb{<-} \hlkwd{SimLongiMMM}\hlstd{(}\hlkwc{data} \hlstd{= brady,} \hlkwc{response} \hlstd{=} \hlstr{"logConc"}\hlstd{,} \hlkwc{group} \hlstd{=} \hlstr{"Drug"}\hlstd{,} \hlkwc{time} \hlstd{=} \hlstr{"Time"}\hlstd{,}
+    \hlkwc{id} \hlstd{=} \hlstr{"ID"}\hlstd{,} \hlkwc{type} \hlstd{=} \hlstr{"Dunnett"}\hlstd{,} \hlkwc{base} \hlstd{=} \hlnum{3}\hlstd{,} \hlkwc{refdist} \hlstd{=} \hlstr{"t"}\hlstd{)}
+\hlcom{# SCI plot}
+\hlkwd{PlotCI}\hlstd{(}\hlkwd{list}\hlstd{(}\hlkwc{Fixed} \hlstd{= Fix,} \hlkwc{Mixed} \hlstd{= Mix,} \hlkwc{`Multiple Marginals`} \hlstd{= MMM),} \hlkwc{title} \hlstd{=} \hlkwa{NULL}\hlstd{)}
+\end{alltt}
+\end{kframe}
+\includegraphics[width=\maxwidth]{figure/PLOTSCI} 
+
+\end{knitrout}
+
+
+\clearpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\bibliographystyle{abbrvnat}
+\bibliography{vign}
 
 \end{document}
