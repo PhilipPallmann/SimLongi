@@ -78,7 +78,7 @@ SimLongiMix <- function(data, response, group, time, id, covariates=NULL,
     if(direction=="tpg"){
       mat2 <- contrMat(ntime, type[1], base=base)
       cmat <- mat2 %x% diag(groups)
-      rownames(cmat) <- paste(rep(levels(dat[, "group"]), dim(mat2)[1]), rep(rownames(mat2), each=dim(mat2)[1]), sep=":")
+      rownames(cmat) <- paste(rep(levels(dat[, "group"]), dim(mat2)[1]), rep(rownames(mat2), each=nlevels(dat[, "group"])), sep=":")
     }
     
     if(direction=="both"){
@@ -87,7 +87,7 @@ SimLongiMix <- function(data, response, group, time, id, covariates=NULL,
       rownames(cmat1) <- paste(rep(levels(dat[, "time"]), each=dim(mat1)[1]), rownames(mat1), sep=":")
       mat2 <- contrMat(ntime, type[2], base=base[2])
       cmat2 <- mat2 %x% diag(groups)
-      rownames(cmat2) <- paste(rep(levels(dat[, "group"]), dim(mat2)[1]), rep(rownames(mat2), each=dim(mat2)[1]), sep=":")
+      rownames(cmat2) <- paste(rep(levels(dat[, "group"]), dim(mat2)[1]), rep(rownames(mat2), each=nlevels(dat[, "group"])), sep=":")
       cmat <- rbind(cmat1, cmat2)
     }
     

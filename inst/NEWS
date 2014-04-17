@@ -6,6 +6,12 @@ Please report weird or unexpected behavior to Philip Pallmann <pallmann@biostat.
 
 #########################
 
+Version 1.1-3 (17 April 2014)
+
+- Bug fix: comparisons of time points per treatment are now correctly labelled. 
+
+#########################
+
 Version 1.1-2 (4 April 2014)
 
 - Help pages revised and updated.
