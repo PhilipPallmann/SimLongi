@@ -1,7 +1,7 @@
 Package: SimLongi
 Type: Package
 Title: Simultaneous Inference in Longitudinal Data Settings
-Version: 1.1-2
+Version: 1.1-4
 Date: 2014-04-04
 Author: Philip Pallmann
 Maintainer: Philip Pallmann <pallmann@biostat.uni-hannover.de>
