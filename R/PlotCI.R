@@ -1,4 +1,4 @@
-PlotCI <- function(output, title="95% SCIs"){
+PlotCI <- function(output, title="95% SCIs", background="white"){
   
   if(class(output)=="silo"){
     output <- list(Fantasyname=output)
@@ -9,6 +9,8 @@ PlotCI <- function(output, title="95% SCIs"){
       stop("output must be a NAMED list!")
     }
   }
+  
+  background <- match.arg(background, choices=c("gray", "grey", "white"))
   
   ### Extract the results
   
@@ -76,6 +78,12 @@ PlotCI <- function(output, title="95% SCIs"){
     tit <- title
   }
   
+  if(background=="white"){
+    backg <- theme_bw()
+  }else{
+    backg <- theme_grey()
+  }
+  
   if(tab$Upper[1]=="Inf"){
     niceCIplot <- ggplot(tab, aes(x=Comp, y=Estimate, ymax=Estimate, color=Method)) +
       geom_hline(yintercept=0, colour=gray(0.5), lty=2) +
@@ -86,9 +94,11 @@ PlotCI <- function(output, title="95% SCIs"){
       coord_flip() +
       xlab("") +
       ggtitle(tit) +
+      backg +
       theme(legend.position=lp,
             legend.title=element_blank(),
             legend.text=element_text(size=13),
+            legend.key=element_rect(colour="white"),
             plot.title=element_text(size=rel(2)),
             axis.text.x=element_text(size=13),
             axis.text.y=element_text(size=13),
@@ -104,9 +114,11 @@ PlotCI <- function(output, title="95% SCIs"){
         coord_flip() +
         xlab("") +
         ggtitle(tit) +
+        backg +
         theme(legend.position=lp,
               legend.title=element_blank(),
               legend.text=element_text(size=13),
+              legend.key=element_rect(colour="white"),
               plot.title=element_text(size=rel(2)),
               axis.text.x=element_text(size=13),
               axis.text.y=element_text(size=13),
@@ -120,9 +132,11 @@ PlotCI <- function(output, title="95% SCIs"){
         coord_flip() +
         xlab("") +
         ggtitle(tit) +
+        backg +
         theme(legend.position=lp,
               legend.title=element_blank(),
               legend.text=element_text(size=13),
+              legend.key=element_rect(colour="white"),
               plot.title=element_text(size=rel(2)),
               axis.text.x=element_text(size=13),
               axis.text.y=element_text(size=13),
