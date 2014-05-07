@@ -51,7 +51,7 @@ SimLongiMMM <- function(data, response, group, time, id, covariates=NULL,
   modlist <- list()
   
   for(z in 1:length(datlist)){
-    modlist[[z]] <- lm(response ~ group, datlist[[z]])
+    modlist[[z]] <- lm(response ~ group, datlist[[z]], na.action="na.exclude")
   }
   
   names(modlist) <- levels(dat$time)
