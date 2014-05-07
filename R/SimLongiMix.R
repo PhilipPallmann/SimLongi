@@ -143,7 +143,7 @@ SimLongiMix <- function(data, response, group, time, id, covariates=NULL,
   
   if(df=="pb"){
     def <- dim(dat)[1] - ids - tgs + 1
-    #LMM <- lme(response ~ tg - 1, random=~1|id, dat)
+    #LMM <- lme(response ~ tg - 1, random=~1|id, dat, na.action="na.exclude")
     #def <- as.numeric(LMM$fixDF$terms)
   }
   

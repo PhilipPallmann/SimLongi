@@ -8,7 +8,7 @@ Please report weird or unexpected behavior to Philip Pallmann <pallmann@biostat.
 
 Version 1.1-5 (7 May 2014)
 
-- SimLongiMMM() no longer surrenders when data have missing values.
+- Bug fix: SimLongi() and SimLongiMMM() no longer surrender when data have missing values.
 
 #########################
 

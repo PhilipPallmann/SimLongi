@@ -110,43 +110,43 @@ SimLongi <- function(data, response, group, time, id, covariates=NULL,
   if("hom" %in% var){
     if("CS" %in% cor){
       mlist[[count]] <- gls(response ~ tg - 1, dat,
-                            correlation=corCompSymm(form=~1|id))
+                            correlation=corCompSymm(form=~1|id), na.action="na.exclude")
       count <- count + 1
     }
     if("AR1" %in% cor){
       mlist[[count]] <- gls(response ~ tg - 1, dat,
-                            correlation=corAR1(form=~1|id))
+                            correlation=corAR1(form=~1|id), na.action="na.exclude")
       count <- count + 1
     }
     if("AR2" %in% cor){
       mlist[[count]] <- gls(response ~ tg - 1, dat,
-                            correlation=corARMA(form=~1|id, p=2))
+                            correlation=corARMA(form=~1|id, p=2), na.action="na.exclude")
       count <- count + 1
     }
     if("MA1" %in% cor){
       mlist[[count]] <- gls(response ~ tg - 1, dat,
-                            correlation=corARMA(form=~1|id, q=1))
+                            correlation=corARMA(form=~1|id, q=1), na.action="na.exclude")
       count <- count + 1
     }
     if("MA2" %in% cor){
       mlist[[count]] <- gls(response ~ tg - 1, dat,
-                            correlation=corARMA(form=~1|id, q=2))
+                            correlation=corARMA(form=~1|id, q=2), na.action="na.exclude")
       count <- count + 1
     }
     if("ARMA11" %in% cor){
       mlist[[count]] <- gls(response ~ tg - 1, dat,
-                            correlation=corARMA(form=~1|id, p=1, q=1))
+                            correlation=corARMA(form=~1|id, p=1, q=1), na.action="na.exclude")
       count <- count + 1
     }
     if("CAR1" %in% cor){
       dat$timeC <- as.numeric(dat[, "time"])
       mlist[[count]] <- gls(response ~ tg - 1, dat,
-                            correlation=corCAR1(form=~timeC|id))
+                            correlation=corCAR1(form=~timeC|id), na.action="na.exclude")
       count <- count + 1
     }
     if("UN" %in% cor){
       mlist[[count]] <- gls(response ~ tg - 1, dat,
-                            correlation=corSymm(form=~1|id))
+                            correlation=corSymm(form=~1|id), na.action="na.exclude")
       count <- count + 1
     }
   }
@@ -155,50 +155,50 @@ SimLongi <- function(data, response, group, time, id, covariates=NULL,
     if("CS" %in% cor){
       mlist[[count]] <- gls(response ~ tg - 1, dat,
                             weights = varIdent(form=~1|tg),
-                            correlation=corCompSymm(form=~1|id))
+                            correlation=corCompSymm(form=~1|id), na.action="na.exclude")
       count <- count + 1
     }
     if("AR1" %in% cor){
       mlist[[count]] <- gls(response ~ tg - 1, dat,
                             weights = varIdent(form=~1|tg),
-                            correlation=corAR1(form=~1|id))
+                            correlation=corAR1(form=~1|id), na.action="na.exclude")
       count <- count + 1
     }
     if("AR2" %in% cor){
       mlist[[count]] <- gls(response ~ tg - 1, dat,
                             weights = varIdent(form=~1|tg),
-                            correlation=corARMA(form=~1|id, p=2))
+                            correlation=corARMA(form=~1|id, p=2), na.action="na.exclude")
       count <- count + 1
     }
     if("MA1" %in% cor){
       mlist[[count]] <- gls(response ~ tg - 1, dat,
                             weights = varIdent(form=~1|tg),
-                            correlation=corARMA(form=~1|id, q=1))
+                            correlation=corARMA(form=~1|id, q=1), na.action="na.exclude")
       count <- count + 1
     }
     if("MA2" %in% cor){
       mlist[[count]] <- gls(response ~ tg - 1, dat,
                             weights = varIdent(form=~1|tg),
-                            correlation=corARMA(form=~1|id, q=2))
+                            correlation=corARMA(form=~1|id, q=2), na.action="na.exclude")
       count <- count + 1
     }
     if("ARMA11" %in% cor){
       mlist[[count]] <- gls(response ~ tg - 1, dat,
                             weights = varIdent(form=~1|tg),
-                            correlation=corARMA(form=~1|id, p=1, q=1))
+                            correlation=corARMA(form=~1|id, p=1, q=1), na.action="na.exclude")
       count <- count + 1
     }
     if("CAR1" %in% cor){
       dat$timeC <- as.numeric(dat[, "time"])
       mlist[[count]] <- gls(response ~ tg - 1, dat,
                             weights = varIdent(form=~1|tg),
-                            correlation=corCAR1(form=~timeC|id))
+                            correlation=corCAR1(form=~timeC|id), na.action="na.exclude")
       count <- count + 1
     }
     if("UN" %in% cor){
       mlist[[count]] <- gls(response ~ tg - 1, dat,
                             weights = varIdent(form=~1|tg),
-                            correlation=corSymm(form=~1|id))
+                            correlation=corSymm(form=~1|id), na.action="na.exclude")
       count <- count + 1
     }
   }
@@ -207,50 +207,50 @@ SimLongi <- function(data, response, group, time, id, covariates=NULL,
     if("CS" %in% cor){
       mlist[[count]] <- gls(response ~ tg - 1, dat,
                             weights = varIdent(form=~1|time),
-                            correlation=corCompSymm(form=~1|id))
+                            correlation=corCompSymm(form=~1|id), na.action="na.exclude")
       count <- count + 1
     }
     if("AR1" %in% cor){
       mlist[[count]] <- gls(response ~ tg - 1, dat,
                             weights = varIdent(form=~1|time),
-                            correlation=corAR1(form=~1|id))
+                            correlation=corAR1(form=~1|id), na.action="na.exclude")
       count <- count + 1
     }    
     if("AR2" %in% cor){
       mlist[[count]] <- gls(response ~ tg - 1, dat,
                             weights = varIdent(form=~1|time),
-                            correlation=corARMA(form=~1|id, p=2))
+                            correlation=corARMA(form=~1|id, p=2), na.action="na.exclude")
       count <- count + 1
     }
     if("MA1" %in% cor){
       mlist[[count]] <- gls(response ~ tg - 1, dat,
                             weights = varIdent(form=~1|time),
-                            correlation=corARMA(form=~1|id, q=1))
+                            correlation=corARMA(form=~1|id, q=1), na.action="na.exclude")
       count <- count + 1
     }
     if("MA2" %in% cor){
       mlist[[count]] <- gls(response ~ tg - 1, dat,
                             weights = varIdent(form=~1|time),
-                            correlation=corARMA(form=~1|id, q=2))
+                            correlation=corARMA(form=~1|id, q=2), na.action="na.exclude")
       count <- count + 1
     }
     if("ARMA11" %in% cor){
       mlist[[count]] <- gls(response ~ tg - 1, dat,
                             weights = varIdent(form=~1|time),
-                            correlation=corARMA(form=~1|id, p=1, q=1))
+                            correlation=corARMA(form=~1|id, p=1, q=1), na.action="na.exclude")
       count <- count + 1
     }
     if("CAR1" %in% cor){
       dat$timeC <- as.numeric(dat[, "time"])
       mlist[[count]] <- gls(response ~ tg - 1, dat,
                             weights = varIdent(form=~1|time),
-                            correlation=corCAR1(form=~timeC|id))
+                            correlation=corCAR1(form=~timeC|id), na.action="na.exclude")
       count <- count + 1
     } 
     if("UN" %in% cor){
       mlist[[count]] <- gls(response ~ tg - 1, dat,
                             weights = varIdent(form=~1|time),
-                            correlation=corSymm(form=~1|id))
+                            correlation=corSymm(form=~1|id), na.action="na.exclude")
       count <- count + 1
     }
   }
@@ -259,50 +259,50 @@ SimLongi <- function(data, response, group, time, id, covariates=NULL,
     if("CS" %in% cor){
       mlist[[count]] <- gls(response ~ tg - 1, dat,
                             weights = varIdent(form=~1|group),
-                            correlation=corCompSymm(form=~1|id))
+                            correlation=corCompSymm(form=~1|id), na.action="na.exclude")
       count <- count + 1
     }
     if("AR1" %in% cor){
       mlist[[count]] <- gls(response ~ tg - 1, dat,
                             weights = varIdent(form=~1|group),
-                            correlation=corAR1(form=~1|id))
+                            correlation=corAR1(form=~1|id), na.action="na.exclude")
       count <- count + 1
     }
     if("AR2" %in% cor){
       mlist[[count]] <- gls(response ~ tg - 1, dat,
                             weights = varIdent(form=~1|group),
-                            correlation=corARMA(form=~1|id, p=2))
+                            correlation=corARMA(form=~1|id, p=2), na.action="na.exclude")
       count <- count + 1
     }
     if("MA1" %in% cor){
       mlist[[count]] <- gls(response ~ tg - 1, dat,
                             weights = varIdent(form=~1|group),
-                            correlation=corARMA(form=~1|id, q=1))
+                            correlation=corARMA(form=~1|id, q=1), na.action="na.exclude")
       count <- count + 1
     }
     if("MA2" %in% cor){
       mlist[[count]] <- gls(response ~ tg - 1, dat,
                             weights = varIdent(form=~1|group),
-                            correlation=corARMA(form=~1|id, q=2))
+                            correlation=corARMA(form=~1|id, q=2), na.action="na.exclude")
       count <- count + 1
     }
     if("ARMA11" %in% cor){
       mlist[[count]] <- gls(response ~ tg - 1, dat,
                             weights = varIdent(form=~1|group),
-                            correlation=corARMA(form=~1|id, p=1, q=1))
+                            correlation=corARMA(form=~1|id, p=1, q=1), na.action="na.exclude")
       count <- count + 1
     }
     if("CAR1" %in% cor){
       dat$timeC <- as.numeric(dat[, "time"])
       mlist[[count]] <- gls(response ~ tg - 1, dat,
                             weights = varIdent(form=~1|group),
-                            correlation=corCAR1(form=~timeC|id))
+                            correlation=corCAR1(form=~timeC|id), na.action="na.exclude")
       count <- count + 1
     }
     if("UN" %in% cor){
       mlist[[count]] <- gls(response ~ tg - 1, dat,
                             weights = varIdent(form=~1|group),
-                            correlation=corSymm(form=~1|id))
+                            correlation=corSymm(form=~1|id), na.action="na.exclude")
       count <- count + 1
     }
   }
@@ -316,13 +316,13 @@ SimLongi <- function(data, response, group, time, id, covariates=NULL,
   ########## Degrees of Freedom ##########
   
   if(df=="ess"){
-    essmod <- gls(response ~ gt - 1, dat, correlation=corAR1(form=~1|id))
+    essmod <- gls(response ~ gt - 1, dat, correlation=corAR1(form=~1|id), na.action="na.exclude")
     phi <- cov2cor(vcov(essmod))[1, 2]
     def <- floor(ids * ((times - (times - 2) * phi) / (1 + phi)))
   }
   
   if(df=="essdf"){
-    essmod <- gls(response ~ gt - 1, dat, correlation=corAR1(form=~1|id))
+    essmod <- gls(response ~ gt - 1, dat, correlation=corAR1(form=~1|id), na.action="na.exclude")
     phi <- cov2cor(vcov(essmod))[1, 2]
     def <- floor(ids * ((times - (times - 2) * phi) / (1 + phi)) - times * groups)
   }
