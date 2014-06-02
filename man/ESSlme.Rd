@@ -2,7 +2,7 @@
 \alias{ESSlme}
 %- Also NEED a '\alias' for EACH other topic documented here.
 \title{
-%%  ~~function to do ... ~~
+Effective Sample Size for \code{lme} Parameters
 }
 \description{
 %%  ~~ A concise (1-5 lines) description of what the function does. ~~
