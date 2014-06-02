@@ -6,6 +6,12 @@ Please report weird or unexpected behavior to Philip Pallmann <pallmann@biostat.
 
 #########################
 
+Version 1.2 (2 June 2014)
+
+- Added functions for computing effective sample sizes for arbitrary gls and lme models.
+
+#########################
+
 Version 1.1-5 (7 May 2014)
 
 - Bug fix: SimLongi() and SimLongiMMM() no longer surrender when data have missing values.
