@@ -1,4 +1,4 @@
-ESSgls <- function(model, IDcolumn=1){
+ESSgls <- function(model, IDcolumn){
   
   if(class(model)!="gls"){
     stop("Your model must be of class 'gls'!")

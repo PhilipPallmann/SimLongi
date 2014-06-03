@@ -1,57 +1,40 @@
 \name{ESSlme}
 \alias{ESSlme}
-%- Also NEED a '\alias' for EACH other topic documented here.
 \title{
 Effective Sample Size for \code{lme} Parameters
 }
 \description{
-%%  ~~ A concise (1-5 lines) description of what the function does. ~~
+Compute the effective sample sizes associated with the parameter estimates of a linear mixed-effects model fitted via \code{lme}.
 }
 \usage{
-ESSlme(x)
+ESSlme(model, IDcolumn)
 }
-%- maybe also 'usage' for other objects documented here.
 \arguments{
-  \item{x}{
-%%     ~~Describe \code{x} here~~
-}
+  \item{model}{A linear mixed-effects model fit of class \code{lme} from \code{nlme}.}
+  \item{IDcolumn}{An integer giving the number of the column in the \code{data.frame} on which the model fit is based that contains the ID variable (cluster identifier).}
 }
 \details{
-%%  ~~ If necessary, more details than the description above ~~
+The \code{data.frame} used for model fitting must be sorted along the ID variable, otherwise you might get mock results!
 }
 \value{
-%%  ~Describe the value returned
-%%  If it is a LIST, use
-%%  \item{comp1 }{Description of 'comp1'}
-%%  \item{comp2 }{Description of 'comp2'}
-%% ...
+A vector giving the effective sample sizes associated with the estimated parameters of the \code{lme} model.
 }
 \references{
-%% ~put references to the literature/web site here ~
+Faes, C., Molenberghs, G., Aerts, M., Verbeke, G., Kenward, M. G. (2009) The effective sample size and an alternative small-sample degrees-of-freedom method. The American Statistician, 63(4), 389--399.
 }
 \author{
-%%  ~~who you are~~
+Philip Pallmann \email{pallmann@biostat.uni-hannover.de}
 }
 \note{
-%%  ~~further notes~~
+Models with multiple hierarchical levels are currently not supported.
 }
-
-%% ~Make other sections like Warning with \section{Warning }{....} ~
-
 \seealso{
-%% ~~objects to See Also as \code{\link{help}}, ~~~
+\code{\link{ESSgls}}
 }
 \examples{
-##---- Should be DIRECTLY executable !! ----
-##-- ==>  Define data, use random,
-##--	or do  help(data=index)  for the standard data sets.
-
-## The function is currently defined as
-function (x) 
-{
-  }
+### Using the example from the lme help page
+library(nlme)
+lme1 <- lme(distance ~ age + Sex, Orthodont, random=~1)
+ESSlme(lme1, IDcolumn=3)
 }
-% Add one or more standard keywords, see file 'KEYWORDS' in the
-% R documentation directory.
-\keyword{ ~kwd1 }
-\keyword{ ~kwd2 }% __ONLY ONE__ keyword per line
+\keyword{htest}

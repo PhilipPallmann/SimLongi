@@ -1,4 +1,4 @@
-ESSlme <- function(model, IDcolumn=1){
+ESSlme <- function(model, IDcolumn){
   
   if(class(model)!="lme"){
     stop("Your model must be of class 'lme'!")
