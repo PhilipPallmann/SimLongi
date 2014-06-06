@@ -34,7 +34,8 @@ Models with multiple hierarchical levels are currently not supported.
 \examples{
 ### Using the example from the lme help page
 library(nlme)
+data(Orthodont)
 lme1 <- lme(distance ~ age + Sex, Orthodont, random=~1)
-ESSlme(lme1, IDcolumn=3)
+#ESSlme(model=lme1, IDcolumn=3)
 }
 \keyword{htest}

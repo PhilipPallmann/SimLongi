@@ -1,19 +1,19 @@
 SimLongiMix <- function(data, response, group, time, id, covariates=NULL,
-                     rand=list("1|id", "time|id", "group|id", "timegroup|id"),
-                     contrasts=NULL, type="Dunnett", base=1, direction="gpt",
-                     alternative="two.sided", level=0.95, df="kr"){
-
+                        rand=list("1|id", "time|id", "group|id", "timegroup|id"),
+                        contrasts=NULL, type="Dunnett", base=1, direction="gpt",
+                        alternative="two.sided", level=0.95, df="kr"){
+  
   if(min(rand %in% list("1|id", "time|id", "group|id", "timegroup|id"))==0){
     stop("Your random effects patterns must be among the following:
          '1|id', 'time|id', 'group|id', 'timegroup|id'.")
   }
   
-  df <- match.arg(df, c("kr", "pb", "naive", "res", "normal"))
+  df <- match.arg(df, c("kr", "pb", "ess", "adj", "naive", "res", "normal"))
   
   if(is.null(contrasts)==T){
-
+    
     direction <- match.arg(direction, c("gpt", "tpg", "both"))
-      
+    
     if(direction=="both" & length(type)==1){
       type <- rep(type, 2)
     }
@@ -44,8 +44,8 @@ SimLongiMix <- function(data, response, group, time, id, covariates=NULL,
     if(any(rowSums(contrasts)!=0)){
       stop("The sum of elements in each row of your contrast matrix must be zero!")
     }
-      
-  }
+    
+    }
   
   alternative <- match.arg(alternative, c("two.sided", "greater", "less"))
   
@@ -147,6 +147,16 @@ SimLongiMix <- function(data, response, group, time, id, covariates=NULL,
     #def <- as.numeric(LMM$fixDF$terms)
   }
   
+  if(df=="ess"){
+    essmod <- gls(response ~ gt - 1, dat, correlation=corAR1(form=~1|id), na.action="na.exclude")
+    phi <- cov2cor(vcov(essmod))[1, 2]
+    def <- floor(ids * ((times - (times - 2) * phi) / (1 + phi)) - times * groups)
+  }
+  
+  if(df=="adj"){
+    def <- floor(ids + (times^2 * groups^2) / ids - tgs)
+  }
+  
   if(df=="naive"){
     def <- ids - (groups * times)
   }
@@ -181,7 +191,7 @@ SimLongiMix <- function(data, response, group, time, id, covariates=NULL,
   
   tab <- data.frame(Estimate=est, SE=se, Lower=low, Upper=up, Statistic=stat, P=padj)
   tab <- round(tab, 4)
-    
+  
   ########## Output ##########
   
   out <- list()

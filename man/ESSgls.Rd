@@ -34,8 +34,9 @@ Models with multiple hierarchical levels are currently not supported.
 \examples{
 ### Using the example from the gls help page
 library(nlme)
+data(Ovary)
 gls1 <- gls(follicles ~ sin(2 * pi * Time) + cos(2 * pi * Time), Ovary,
             correlation=corAR1(form=~1|Mare))
-ESSgls(gls1, IDcolumn=1)
+#ESSgls(model=gls1, IDcolumn=1)
 }
 \keyword{htest}

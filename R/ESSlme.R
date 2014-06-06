@@ -4,7 +4,7 @@ ESSlme <- function(model, IDcolumn){
     stop("Your model must be of class 'lme'!")
   }
   
-  N <- mix2$dims$ngrps[1]
+  N <- model$dims$ngrps[1]
   p <- length(model$coefficients$fixed)
   
   ni <- table(model$groups)

@@ -13,7 +13,7 @@ SimLongi <- function(data, response, group, time, id, covariates=NULL,
          'CS', 'AR1', 'AR2', 'MA1', 'MA2', 'ARMA11', 'CAR1', 'UN'.")
   }
   
-  df <- match.arg(df, c("ess", "essdf", "adj", "pb", "satt", "kr", "con", "naive", "res", "normal"))
+  df <- match.arg(df, c("ess", "adj", "pb", "satt", "kr", "con", "naive", "res", "normal"))
   
   if(is.null(contrasts)==T){
 
@@ -316,12 +316,6 @@ SimLongi <- function(data, response, group, time, id, covariates=NULL,
   ########## Degrees of Freedom ##########
   
   if(df=="ess"){
-    essmod <- gls(response ~ gt - 1, dat, correlation=corAR1(form=~1|id), na.action="na.exclude")
-    phi <- cov2cor(vcov(essmod))[1, 2]
-    def <- floor(ids * ((times - (times - 2) * phi) / (1 + phi)))
-  }
-  
-  if(df=="essdf"){
     essmod <- gls(response ~ gt - 1, dat, correlation=corAR1(form=~1|id), na.action="na.exclude")
     phi <- cov2cor(vcov(essmod))[1, 2]
     def <- floor(ids * ((times - (times - 2) * phi) / (1 + phi)) - times * groups)
