@@ -41,9 +41,6 @@ The
 \section{Comparisons among treatment groups per time point}
 \label{GPT}
 
-<<XXXXXXX, warning=FALSE, message=FALSE>>=
-library(SimLongi)
-@
 
 \clearpage
 
@@ -63,24 +60,7 @@ library(SimLongi)
 \section{Comparing }
 \label{Comp}
 
-xxx
-
-<<PLOTSCI, message=FALSE, fig.height=5>>=
-data(brady)
-# Fixed-effects model
-Fix <- SimLongi(data=brady, response="logConc", group="Drug", time="Time", id="ID",
-                var=list("hett", "het"), cor=list("AR1", "UN"),
-                direction="gpt", type="Dunnett", base=3, df="adj")
-# Mixed-effects model
-Mix <- SimLongiMix(data=brady, response="logConc", group="Drug", time="Time", id="ID",
-                   rand=list("time|id"),
-                   direction="gpt", type="Dunnett", base=3, df="kr")
-# Multiple marginal models
-MMM <- SimLongiMMM(data=brady, response="logConc", group="Drug", time="Time", id="ID",
-                   type="Dunnett", base=3, refdist="t")
-# SCI plot
-PlotCI(list(Fixed=Fix, Mixed=Mix, "Multiple Marginals"=MMM), title=NULL)
-@
+xxx \citet{Pipper2012}
 
 \clearpage
 
