@@ -1,2 +1,2 @@
 import(ggplot2, knitr, lme4, multcomp, MuMIn, mvtnorm, nlme, pbkrtest)
-export(PlotCI, satterthwaite, SimLongi, SimLongiMix, SimLongiMMM)
+export(ESSgls, ESSlme, PlotCI, PowApprox, satterthwaite, SimLongi, SimLongiMix, SimLongiMMM)
