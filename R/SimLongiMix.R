@@ -125,7 +125,7 @@ SimLongiMix <- function(data, response, group, time, id, covariates=NULL,
     count <- count + 1
   }
   
-  mstab <- mod.sel(mlist)
+  mstab <- model.sel(mlist)
   
   bestweight <- mstab[1, "weight"]
   
